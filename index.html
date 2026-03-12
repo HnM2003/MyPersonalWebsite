@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible Content Example</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="image.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="imageDisplay.js" defer></script>
+    <script src="cascadingEffect.js" defer></script>
+</head>
+
+<body>
+
+    <h1 class="mt-2">Hafeez Mustafa</h1>
+    <!-- <img src="" alt="Personal image" /> -->
+
+    <h2 class="mt-4">Key projects:</h2>
+
+    <h3 class="py-3">XAI</h3>
+    <strong class="animation">Project Description:</strong>
+    <p class="animation">
+        This project addresses a critical bottleneck in human-robot collaboration research: the lack of transparency
+        in
+        robotic decision-making during cooperative tasks. The Neuromotor Control and Learning (NMCL) Lab at the
+        University of Maryland conducts studies using VTEAM, a virtual reality environment where human participants
+        and
+        a simulated humanoid robot (Baxter) take turns solving Rush Hour-style puzzle games of varying difficulty.
+        While
+        the system enables flexible experimental setup, a major limitation is that human participants often struggle
+        to
+        understand why the robot selects certain moves, impairing trust and effective teamwork. To overcome this
+        challenge, we developed an Explainable Artificial Intelligence (XAI) system that enables Baxter to
+        communicate
+        its reasoning through multiple modalities. Our solution extends the existing Unity3D-based VTEAM framework
+        by
+        allowing researchers to configure when and how explanations are delivered—before, during, or after the
+        robot’s
+        actions—and to control the mode of explanation, including text pop-ups, speech output using the ESpeak API,
+        and
+        graphical overlays with directional arrows on the game board. Users can also select the frequency of
+        explanations (every turn, intermittent turns, or on-demand) and the explanation quality (good, neutral, or
+        bad)
+        to support varied experimental conditions. The enhanced interface empowers researchers to systematically
+        study
+        cognitive load, trust dynamics, and user comprehension under different XAI configurations. By making the
+        robot’s
+        decision-making process visible and tunable, our project advances the NMCL lab’s capability to investigate
+        critical questions in cognitive-motor collaboration, laying the foundation for broader applications of
+        explainable robotics in fields such as autonomous driving, aviation, and surgical assistance.
+    </p>
+
+    <a class="animation" href="https://expo.umd.edu/projects/spring-2025/project-xai">Capstone expo from where the description comes
+        from alongside a short video made by a team member.</a>
+    <br> <br>
+
+    <details>
+        <summary>Key responsibilities and roles</summary>
+        <div class="content">
+            <ol class="d-flex flex-column gap-2">
+                <li>
+                    <b>Testing:</b> Ensured that every line of code added was executed at least once achieving it's
+                    intended
+                    purpose and various edge cases are tested and and issues found
+                    are promptly handled.
+                    For example, an edge case was tested which was a puzzle being completed near the end of a puzzle
+                    difficulty phase. In this case, an issue appeared where a puzzle
+                    was skipped for the next puzzle difficulty phase. After some debugging, the issue was traced
+                    back to
+                    a UNITY script which ended the game if the red ambulance block
+                    reached the completion area of the puzzle that led to a function call that loaded in the next
+                    puzzle
+                    which would also be called as part of the couroutine that began
+                    the next puzzle difficulty phase.
+                </li>
+                <li>
+                    <b>UX/UI Design:</b> Created the UI for the Experimental Settings with an emphasis of usability
+                    and
+                    functionality over appearence as the settings were designed for the
+                    experimenters rather than the participants. The UI was designed to be intuitive and easy to use
+                    with
+                    clear labels and tooltips for each setting.
+                </li>
+                <li>
+                    <b>Communication:</b> Assisted alongside my team to effectively communicate all concerns to the
+                    client
+                    and ensure any issues were flagged and tackled early on instead of being handled late into the
+                    development cycle.
+                </li>
+                <li>
+                    <b>Documentation:</b> Created and managed documentation for the new features and code added to
+                    the
+                    project to ensure that future developers could easily understand the codebase and the new
+                    features
+                    added.
+                </li>
+                <li>
+                    <b>Spec Design:</b> Assisted in the overall design of the project by defining the different
+                    components of the
+                    spec that would address the client requirements and allow the project to be greenlit.
+                </li>
+            </ol>
+        </div>
+    </details>
+
+    <details>
+        <summary>Additional Work Done Over The Summer</summary>
+        <div class="content">
+            The additional work that was done over the summer was done individually and began in late June and ended
+            in
+            early August with the following:
+            (1) new experimental settings, (2) UI/UX improvements and refactorization, (3) enhancements to testing
+            capabilities, and (4) configure new features while
+            preserving core functionality.
+            <ol class="d-flex flex-column gap-2">
+                <li>
+                    <b>New Experimental Settings:</b>
+                    <ul class="d-flex flex-column gap-2">
+                        <li>
+                            <span class="custom-underline">Trial-based experiments:</span> The client wanted the
+                            option
+                            to conduct experiments in a different
+                            manner in particular
+                            without the contrainsts poised by the default experimental settings. The new trial-based
+                            experimental settings would allow
+                            the experimenter to set a fixed number of trials for a set of puzzles with the option to
+                            set
+                            each each puzzle with the following options:
+                            the baxter-player turn ratio, who starts first (robot or human), and whether robot
+                            assistance will be enabled for the specified puzzle.
+                        </li>
+
+                        <li>
+                            <span class="custom-underline">Extension of XAI Settings:</span> Rather than having the
+                            XAI
+                            settings be used for the whole
+                            experiment the epxerimenter would have the option to
+                            apply a different set of XAI settings depending on the puzzle difficulty phase. For
+                            example,
+                            the experimenter could set the XAI settings
+                            to have the robot explanations occur more frequently durring the hard puzzle difficulty
+                            phase compared to the easy puzzle difficulty phase.
+                        </li>
+
+                        <li>
+                            <span class="custom-underline">Other parameterizations:</span> Additional settings which
+                            enabling robot turns only or human turns
+                            only for an experiment, and a preserve turns feature
+                            that would keep the turn order across puzzles as by default the turn order count between
+                            the
+                            robot and player resets after each puzzle.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>UI/UX improvements and refactorization:</b>
+                    <ul class="d-flex flex-column gap-2">
+                        <li>
+                            <span class="custom-underline">Planning algorithm selection dropdown:</span> Created a
+                            dropdown which would allow the experimenter
+                            to select between different planning algorithms that
+                            were stored in a folder rather than using an absolute path to a specific planning
+                            algorithm.
+                        </li>
+
+                        <li>
+                            <span class="custom-underline">Overwrite option for XAI settings:</span> Created a
+                            toggle
+                            which when enabled would allow the
+                            experimenter when setting the default XAI settings to
+                            also overwrite the XAI settings for each puzzle difficulty phase.
+                        </li>
+
+                        <li>
+                            <span class="custom-underline">Default experiment file:</span> Created a default
+                            experiment
+                            file which would be loaded in when the
+                            experimenter loads in the experimental settings scene.
+                            The default file would be modifiable through the experimental settings scene rather than
+                            directly through the file to avoid potential parsing errors
+                            with the xml format and the nested structure of some datastructures.
+                        </li>
+
+                        <li>
+                            <span class="custom-underline">Refactorization through modularity:</span> Split code
+                            into
+                            smaller reusable functional units
+                            through the use of C# object oriented approach with class
+                            inheritance, utilized UNITY prefabs for re-using UI elements alongside their base
+                            functionality, and general code cleanup i.e. more expressive
+                            variable names.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>Enhancements to testing capabilities:</b>
+                    <ul>
+                        <li>
+                            <span class="custom-underline">Logging for testing purposes:</span> Implemented with the
+                            existing logging system to log
+                            information for an experiment that would be useful to trace issues
+                            with the runtime system. This was done to assist the experimenter to report issues for
+                            an
+                            experiment to the current development team to help debug
+                            the issues sooner.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>Enhanced core features while integrating new functionality:</b>
+                </li>
+                <ul class="d-flex flex-column gap-2">
+                    <li>
+                        <span class="custom-underline">Enhanced audio XAI explanations:</span> Ensured that the
+                        audio
+                        explanations would prevent the user or
+                        robot actions until the audio explanation finished playing in line with the other XAI
+                        explanation modes.
+                    </li>
+
+                    <li>
+                        <span class="custom-underline">Improvised various experiment settings and quirks for
+                            compatibility with the preserve turns feature:</span>
+                        Experimental settings including disengagement period (setting where the robot disengages),
+                        who
+                        starts (robot or human),
+                        and baxter-player ratio were either modified or taken in concideration of implementing the
+                        presever turns feature.
+                        Furthermore, a quirk was discovered with how the turn counter for the human player was
+                        updated
+                        where when the player
+                        let go of the block it would snap updating the counter. However, if the player did the
+                        completing move for a puzzle the block could
+                        either snap or be held by the player to the end (completion) location of the puzzle. Thus,
+                        to
+                        address this hooks were added to the
+                        runtime system to detect if the block snapped or not for the final move of the puzzle.
+                    </li>
+                </ul>
+
+            </ol>
+        </div>
+    </details>
+
+    <details>
+        <summary>Images of the project as of Aug. 2025</summary>
+        <div class="content container text-center d-flex flex-wrap gap-2 justify-content-center" id="xaiImages">
+        </div>
+
+    </details>
+
+    <!-- Modals here -->
+    <div id="modalHere">
+        <div class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </div>
+
+    <h3 class="py-3">Blog for Geeks</h3>
+    <strong class="animation">Project Description:</strong>
+    <p class="animation">
+        A full-stack personal website utilizing Express.js and JavaScript for the webserver and React
+        for displaying and querying different types of posts, implementing secure login authentication and
+        scalable, query-based CRUD operations for managing posts, blogs, and tickets. Developed a custom
+        ticketing system to track and quantify personal project development velocity with graphs, incorporated
+        GitHub API integration to link tickets directly with recent commits for streamlined work explanation and
+        project transparency, utilized Sass to construct a responsive UI with mobile-first front-end design, and
+        basic optimization and load testing through k6.
+    </p>
+
+    <a href="https://cmsc335finalproject-hhqs.onrender.com/">Check out the website and it's features.</a>
+    <p>
+        Note: outbound emails are 
+        disabled by Render; so, use SSO instead of normal email authentication
+    </p>
+
+    <details>
+        <summary>Key features</summary>
+        <div class="content">
+            <ul class="d-flex flex-column gap-2">
+                <li>Account Management: Standard account creation and login done through either email or Google SSO, alongside
+                    specific user information stored securely though MongoDB. Password reset and password change flow are handled
+                    for non-SSO created accounts using a one-time link. 
+                </li>
+                <li>User Posts: Enables users to create posts for basic comments, blogs for detailed observations alongside related
+                    tags and a title, and a ticket which describes work done for a given project. The posts have all the basic CRUD
+                    operations available to them. Furthermore, a graph exists to monitor different metrics when it comes to 
+                </li>
+                <li>Github Integration: Enabling the linking of a Github account with a given user which enables the following: 
+                    (1) storage of tickets in a format stored in a markdown file for persistence, (2) attachement of a specified
+                    commit or repo for a ticket, and (3) being able to see recently pushes commits which is done through webhooks.
+                </li>
+                <li>Basic Security Measures: Utilized a CSP, Sec-Fetch-Site Headers, CSRF Token/Header, and Trusted Types to secure
+                    the application from potential attacks.
+                </li>
+                <li>Other minor features: i.e., popup feature for webhooks or account updates</li>
+            </ul>
+        </div>
+    </details>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
